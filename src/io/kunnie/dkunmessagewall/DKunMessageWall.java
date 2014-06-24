@@ -12,7 +12,6 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
-import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.AdapterView;
@@ -51,8 +50,6 @@ public class DKunMessageWall extends Activity implements
 		{ // Start the service in case it didn't start (for example, first run)
 			Intent serviceLauncher = new Intent(this, BackgroundService.class);
 			this.startService(serviceLauncher);
-
-			Log.i("DkunMessageWall", "Service loaded by activity");
 		}
 	}
 
@@ -64,7 +61,10 @@ public class DKunMessageWall extends Activity implements
 
 		// Populate the list
 		this.numberAdapter.clear();
-		this.numberAdapter.addAll(settings.getNumbers());
+		
+		for (PhoneNumber phoneNumber : settings.getNumbers()) {
+			this.numberAdapter.add(phoneNumber);
+		}
 	}
 
 	@Override
@@ -80,7 +80,8 @@ public class DKunMessageWall extends Activity implements
 	}
 
 	private void onAboutButtonClick() {
-
+		Intent intent = new Intent(this, About.class);
+		this.startActivity(intent);
 	}
 
 	private void onAddNumberButtonClick() {

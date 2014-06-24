@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
 
     <string name="app_name">DKun Message Wall</string>
+    <string name="donationInfo">Our applications are all free and open-source, and without advertisement too. All for the purpose of creating the smallest package possible. Our only income is through your kind donation.</string>
+    <string name="opensourceInfo">Our softwares are released and then source-opened for every kind of purposes: research, making copies, even for commercial purpose. This software is released under MIT license. Click the button below to get involved or get more information:</string>
 
 </resources>
